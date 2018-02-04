@@ -113,7 +113,7 @@ class ModbusDevice(object):
     def __init__(self, dev, baudrate=9600):
         self.serial = serial.Serial(port=dev, baudrate=baudrate, parity=serial.PARITY_NONE, bytesize=8, stopbits=1,
                                     timeout=0.05)
-        self.serial.baudrate = baudrate
+        # self.serial.baudrate = baudrate
         self.lock = Lock()
 
     def _communicate(self, request, read_size):
